@@ -1,0 +1,29 @@
+name: "Simple rect pipeline"
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+
+      - name: "Check Node.js Version"
+        run: node --version
+
+      - name: "check npm version "
+        run: npm  --version 
+
+      - name: "clone repo"
+        uses: actions/checkout@v2
